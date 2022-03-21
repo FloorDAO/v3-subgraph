@@ -92,7 +92,7 @@ export function handleIncreaseLiquidity(event: IncreaseLiquidity): void {
   }
 
   // temp fix
-  if (Address.fromString(position.pool).equals(Address.fromHexString('0x8fe8d9bb8eeba3ed688069c3d6b556c9ca258248'))) {
+  if (Address.fromString(position.pool).equals(Address.fromString('0x8fe8d9bb8eeba3ed688069c3d6b556c9ca258248'))) {
     return
   }
   let bundle = Bundle.load('1')
@@ -128,7 +128,7 @@ export function handleDecreaseLiquidity(event: DecreaseLiquidity): void {
   }
 
   // temp fix
-  if (Address.fromString(position.pool).equals(Address.fromHexString('0x8fe8d9bb8eeba3ed688069c3d6b556c9ca258248'))) {
+  if (Address.fromString(position.pool).equals(Address.fromString('0x8fe8d9bb8eeba3ed688069c3d6b556c9ca258248'))) {
     return
   }
 
@@ -158,7 +158,7 @@ export function handleCollect(event: Collect): void {
   if (position == null) {
     return
   }
-  if (Address.fromString(position.pool).equals(Address.fromHexString('0x8fe8d9bb8eeba3ed688069c3d6b556c9ca258248'))) {
+  if (Address.fromString(position.pool).equals(Address.fromString('0x8fe8d9bb8eeba3ed688069c3d6b556c9ca258248'))) {
     return
   }
 
@@ -189,7 +189,7 @@ export function handleTransfer(event: Transfer): void {
   let position = getPosition(event, event.params.tokenId)
 
   // position was not able to be fetched
-  if (position == null) {
+  if (!position) {
     return
   }
 
