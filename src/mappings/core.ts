@@ -131,11 +131,11 @@ export function handleMint(event: MintEvent): void {
   let lowerTick = Tick.load(lowerTickId)
   let upperTick = Tick.load(upperTickId)
 
-  if (lowerTick === null) {
+  if (!lowerTick) {
     lowerTick = createTick(lowerTickId, lowerTickIdx, pool.id, event)
   }
 
-  if (upperTick === null) {
+  if (!upperTick) {
     upperTick = createTick(upperTickId, upperTickIdx, pool.id, event)
   }
 
